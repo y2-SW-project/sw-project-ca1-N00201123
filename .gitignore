@@ -1,5 +1,7 @@
 # ignore log files and databases
 ~$*
+*.tmp
+
 *.log
 *.sql
 *.sqlite
