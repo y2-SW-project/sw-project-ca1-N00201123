@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controller\Admin\ProductController as AdminProductController;
+use App\Http\Controllers\User\ProductController as UserProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +29,6 @@ Route::get('user/home', [App\Http\Controllers\User\HomeController::class, 'index
 
 Route::get('/', [PageController::class, 'welcome'])->name('welcome');
 Route::get('/about', [PageController::class, 'about'])->name('about');
+
+Route::get('user/products', [UserProductController::class, 'index'])->name('user.products.index');
+Route::get('user/products/{id}', [UserProductController::class, 'show'])->name('user.products.show');

@@ -30,7 +30,7 @@ class HomeController extends Controller
             $home = 'admin.home';
         }
         else if ($user->hasRole('user')){
-            $home='user.home';
+            $home = 'user.home';
         }
         return redirect()->route($home);
     }
