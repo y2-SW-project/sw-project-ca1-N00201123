@@ -1,33 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Product;
 
-class ProductController extends Controller
+class SampleController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-        $this->middleware('role:user, admin');
-    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $products = Product::all();
-        return view('user.products.index', [
-            'products' => $products
-        ]);
-    }
-
-    public function show($id)
-    {
-        $product = Product::findOrFail($id);
-
-        return view('user.products.show', [
-            'product' => $product
-        ]);
+        //
     }
 
     /**
@@ -50,6 +37,17 @@ class ProductController extends Controller
     {
         //
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -60,7 +58,6 @@ class ProductController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -72,7 +69,6 @@ class ProductController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *

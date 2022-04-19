@@ -15,6 +15,7 @@
                     @endif
 
                     You are logged in as an Admin user!
+                    <a href="{{ route('admin.products.index') }}">View All Products</a>
                 </div>
             </div> 
         </div>
