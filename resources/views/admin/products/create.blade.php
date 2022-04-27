@@ -20,7 +20,7 @@
                 </ul>
               </div>
             @endif
-            <form method="POST" action="{{ route('admin.products.store')  }}">
+            <form method="POST" action="{{ route('admin.products.store')  }}" enctype="multipart/form-data">
               <input type="hidden" name="_token" value="{{  csrf_token()  }}">
               <div class="form-group">
                 <label for="title">Title</label>
@@ -41,6 +41,10 @@
               <div class="form-group">
                 <label for="end_date">Price</label>
                 <input type="text" class="form-control" id="price" name="price" value="{{ old('price') }}" />
+              </div>
+              <div class="form-group">
+                <label for="product_image">Product Image</label>
+                <input type="file" class="form-control" id="product_image" name="product_image" />
               </div>
               
 

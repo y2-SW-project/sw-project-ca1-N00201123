@@ -3,7 +3,7 @@
 @section ('content')
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-12 col-md-offset-2">
         <div class="card">
           <div class="card-header">
             Festival: {{ $product->title }}
@@ -11,6 +11,9 @@
           <div class="card-body">
               <table id="table-products" class="table table-hover">
                 <tbody>
+                  <tr>
+                    <td rowspan="8"><img src="{{ asset('storage/images/' . $product->image_location) }}" width="150"/></td>
+                  </tr>
                   <tr>
                     <td>Title</td>
                     <td>{{ $product->title }}</td>

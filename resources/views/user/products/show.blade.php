@@ -10,6 +10,9 @@
                 <div class="card-body">
                    <table id="table-products" class="table table-hover">
                        <tbody>
+                       <tr>
+                        <td rowspan="8"><img src="{{ asset('storage/images/' . $product->image_location) }}" width="150"/></td>
+                       </tr>
                             <tr>
                                 <td>Title</td>
                                 <td>{{ $product->title }}</td>

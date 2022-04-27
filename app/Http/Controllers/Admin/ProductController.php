@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Hash;
 
 class ProductController extends Controller
 {
@@ -50,8 +51,14 @@ class ProductController extends Controller
         $request->validate([
             'title' => 'required',
             'description' =>'required|max:200',
-            'date' => 'required|date|before:tomorrow'
+            'date' => 'required|date|before:tomorrow',
+            'product_image' => 'file|image'
         ]);
+
+        $product_image = $request->file('product_image');
+        $filename = $product_image->hashName();
+
+        $path = $product_image->storeAs('public/images', $filename);
 
         // if validation passes create the new book
         $product = new Product();
@@ -60,6 +67,7 @@ class ProductController extends Controller
         $product->date = $request->input('date');
         $product->likes = $request->input('likes');
         $product->price = $request->input('price');
+        $product->image_location = $filename;
         $product->save();
 
         return redirect()->route('admin.products.index');

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('date');
             $table->string('likes');
             $table->string('price');
+            $table->string('image_location');
             $table->timestamps();
         });
     }
