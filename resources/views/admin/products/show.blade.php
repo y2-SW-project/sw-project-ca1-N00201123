@@ -6,7 +6,7 @@
       <div class="col-md-12 col-md-offset-2">
         <div class="card">
           <div class="card-header">
-            Festival: {{ $product->title }}
+            Product: {{ $product->title }}
           </div>
           <div class="card-body">
               <table id="table-products" class="table table-hover">
